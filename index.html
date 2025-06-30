@@ -80,21 +80,11 @@
     .close:hover {
       color: #000;
     }
-    video {
+    video, iframe {
       width: 100%;
       height: auto;
       max-height: 70vh;
       border-radius: 5px;
-    }
-    /* Deck embed styling */
-    .deck-section {
-      margin-top: 50px;
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 8px;
     }
     @media(max-width: 600px) {
       h1 {
@@ -107,8 +97,8 @@
         font-size: 1em;
         padding: 12px 20px;
       }
-      iframe {
-        height: 400px;
+      video, iframe {
+        max-height: 50vh;
       }
     }
   </style>
@@ -121,13 +111,13 @@
     <h1>DropSensAI</h1>
     <h2>"Precision Retargeting. Instant Action."</h2>
     <a class="button" id="videoBtn">▶️ View Demo Video</a>
-    <a class="button" href="#deck">📊 View Product Deck</a>
+    <a class="button" id="deckBtn">📊 View Product Deck</a>
   </div>
 
   <!-- Video Modal -->
   <div id="videoModal" class="modal">
     <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
+      <span class="close" id="closeVideoModal">&times;</span>
       <video controls>
         <source src="DropSensAI - Presentation Demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -135,31 +125,52 @@
     </div>
   </div>
 
-  <!-- Product Deck -->
-  <div id="deck" class="deck-section">
-    <iframe src="DropSensAi_Presentation_2025.html"></iframe>
+  <!-- Deck Modal -->
+  <div id="deckModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeDeckModal">&times;</span>
+      <iframe src="DropSensAi_Presentation_2025.html"></iframe>
+    </div>
   </div>
 
   <script>
-    var modal = document.getElementById("videoModal");
-    var btn = document.getElementById("videoBtn");
-    var span = document.getElementById("closeModal");
+    // Video modal logic
+    var videoModal = document.getElementById("videoModal");
+    var videoBtn = document.getElementById("videoBtn");
+    var closeVideo = document.getElementById("closeVideoModal");
 
-    btn.onclick = function() {
-      modal.style.display = "block";
+    videoBtn.onclick = function() {
+      videoModal.style.display = "block";
     }
-    span.onclick = function() {
-      modal.style.display = "none";
-      var vid = modal.querySelector("video");
+    closeVideo.onclick = function() {
+      videoModal.style.display = "none";
+      var vid = videoModal.querySelector("video");
       vid.pause();
     }
     window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-        var vid = modal.querySelector("video");
+      if (event.target == videoModal) {
+        videoModal.style.display = "none";
+        var vid = videoModal.querySelector("video");
         vid.pause();
       }
     }
+
+    // Deck modal logic
+    var deckModal = document.getElementById("deckModal");
+    var deckBtn = document.getElementById("deckBtn");
+    var closeDeck = document.getElementById("closeDeckModal");
+
+    deckBtn.onclick = function() {
+      deckModal.style.display = "block";
+    }
+    closeDeck.onclick = function() {
+      deckModal.style.display = "none";
+    }
+    window.addEventListener("click", function(event) {
+      if (event.target == deckModal) {
+        deckModal.style.display = "none";
+      }
+    });
   </script>
 </body>
 </html>
