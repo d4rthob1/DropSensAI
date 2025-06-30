@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DropSensAI</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      background: #ffffff;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .logo img {
+      max-width: 300px;
+      height: auto;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 20px 0;
+    }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 1.8em;
+      font-style: italic;
+      color: #555;
+      margin: 10px 0 30px 0;
+    }
+    .button {
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background: #555;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 960px;
+      width: 90%;
+      text-align: center;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #000;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      border-radius: 5px;
+    }
+    /* Deck embed styling */
+    .deck-section {
+      margin-top: 50px;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+    }
+    @media(max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.4em;
+      }
+      .button {
+        font-size: 1em;
+        padding: 12px 20px;
+      }
+      iframe {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="images/dropsensai.png" alt="DropSensAI Logo">
+    </div>
+    <h1>DropSensAI</h1>
+    <h2>"Precision Retargeting. Instant Action."</h2>
+    <a class="button" id="videoBtn">▶️ View Demo Video</a>
+    <a class="button" href="#deck">📊 View Product Deck</a>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <video controls>
+        <source src="dropsensai_demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Product Deck -->
+  <div id="deck" class="deck-section">
+    <iframe src="deck.html"></iframe>
+  </div>
+
+  <script>
+    var modal = document.getElementById("videoModal");
+    var btn = document.getElementById("videoBtn");
+    var span = document.getElementById("closeModal");
+
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+      var vid = modal.querySelector("video");
+      vid.pause();
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        var vid = modal.querySelector("video");
+        vid.pause();
+      }
+    }
+  </script>
+</body>
+</html>
