@@ -54,6 +54,19 @@
     .button:hover {
       background: #555;
     }
+    .vote-link {
+      margin-top: 30px;
+      font-size: 1em;
+      color: #666;
+    }
+    .vote-link a {
+      color: #007acc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .vote-link a:hover {
+      text-decoration: underline;
+    }
     .modal {
       display: none;
       position: fixed;
@@ -136,6 +149,9 @@
       video {
         max-height: 50vh;
       }
+      .vote-link {
+        font-size: 0.9em;
+      }
     }
     @media (min-width: 1024px) {
       .logo img {
@@ -152,6 +168,10 @@
     <h2>"Precision Retargeting. Instant Action."</h2>
     <a class="button" id="videoBtn">▶️ View Demo Video</a>
     <a class="button" id="deckBtn">📊 View Product Deck</a>
+
+    <div class="vote-link">
+      Like what you see? 👉 <a href="https://your-voting-link.com" target="_blank">Vote for DropSensAI (CX Pillar)</a>
+    </div>
   </div>
 
   <!-- Video Modal -->
