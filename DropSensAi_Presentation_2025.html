@@ -109,23 +109,6 @@
       max-width: 600px;
       margin: 20px auto;
     }
-    .scroll-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 1500;
-      background: #333;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      display: none;
-      transition: background 0.3s;
-    }
-    .scroll-top:hover {
-      background: #555;
-    }
     @media (max-width: 768px) {
       .slide h1 {
         font-size: 2em;
@@ -200,9 +183,6 @@
 
 </div>
 
-<!-- Scroll to Top Button -->
-<div class="scroll-top" onclick="scrollToTop()">&#8679;</div>
-
 <script>
   function toggleNotes(slideId) {
     var notes = document.getElementById("notes-" + slideId);
@@ -229,23 +209,6 @@
     }
   });
 
-  function scrollToTop() {
-    document.querySelector('.slides-container').scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-
-  const container = document.querySelector('.slides-container');
-  const scrollBtn = document.querySelector('.scroll-top');
-
-  container.addEventListener('scroll', () => {
-    if (container.scrollTop > 200) {
-      scrollBtn.style.display = 'block';
-    } else {
-      scrollBtn.style.display = 'none';
-    }
-  });
 </script>
 </body>
 </html>
