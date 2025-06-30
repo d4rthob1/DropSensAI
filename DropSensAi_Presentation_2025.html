@@ -12,13 +12,9 @@
       width: 100%;
       font-family: "Helvetica Neue", sans-serif;
       scroll-behavior: smooth;
-      overflow: hidden;
       background: #ffffff;
       color: #333;
     }
-	body {
-	  overflow-x: hidden;
-	}
     .slides-container {
       scroll-snap-type: y mandatory;
       overflow-y: scroll;
@@ -26,8 +22,6 @@
     }
     .slide {
       scroll-snap-align: start;
-	  scroll-padding-top; 20px;
-	  scroll-padding-bottom; 40px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -36,7 +30,6 @@
       padding: 40px 20px;
       box-sizing: border-box;
       text-align: center;
-	  overflow-y: auto;
     }
     .slide h1 {
       font-size: 3em;
@@ -64,19 +57,19 @@
       content: "• ";
       color: #666;
     }
-	.slide-content {
-	  max-width: 1024px;
-	  width: 100%;
-	  margin: 0 auto;
-	  padding: 0 20px;
-	  box-sizing: border-box;
-	}
+    .slide-content {
+      max-width: 1024px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
     .logo-container img {
       width: 100%;
-	  max-width: 900px;
+      max-width: 900px;
       height: auto;
-	  display: block;
-	  margin: 0 auto;
+      display: block;
+      margin: 0 auto;
     }
     .notes {
       display: none;
@@ -88,7 +81,7 @@
       font-family: Georgia, serif;
       color: #444;
       text-align: center;
-	  margin: 1em auto 0 auto;
+      margin: 1em auto 0 auto;
     }
     .toggle-btn {
       margin-top: 20px;
@@ -111,7 +104,7 @@
       height: 2px;
       background: #ccc;
       width: 50%;
-	  max-width: 600px;
+      max-width: 600px;
       margin: 20px auto;
     }
     hr.bullet-divider {
@@ -121,39 +114,54 @@
       width: 25%;
       margin: 20px auto;
     }
-	@media (max-width: 768px) {
-	  /* Tablet + small laptops */
-	  .slide h1 {
-		font-size: 2em;
-	  }
-	  .slide h2 {
-		font-size: 1.4em;
-	  }
-	  .slide p,
-	  .slide ul {
-		font-size: 1em;
-	  }
-	  .toggle-btn {
-		font-size: 0.9em;
-		padding: 8px 16px;
-	  }
-	  .notes {
-		font-size: 1em;
-	  }
-	}
-	@media (max-width: 480px) {
-	  /* Mobile devices */
-	  .slide h1 {
-		font-size: 1.6em;
-	  }
-	  .slide h2 {
-		font-size: 1.2em;
-	  }
-	  .slide p,
-	  .slide ul {
-		font-size: 0.9em;
-	  }
-	}
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #333;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      z-index: 9999;
+      transition: background 0.3s;
+    }
+    .scroll-top:hover {
+      background: #555;
+    }
+    @media (max-width: 768px) {
+      .slide h1 {
+        font-size: 2em;
+      }
+      .slide h2 {
+        font-size: 1.4em;
+      }
+      .slide p,
+      .slide ul {
+        font-size: 1em;
+      }
+      .toggle-btn {
+        font-size: 0.9em;
+        padding: 8px 16px;
+      }
+      .notes {
+        font-size: 1em;
+      }
+    }
+    @media (max-width: 480px) {
+      .slide h1 {
+        font-size: 1.6em;
+      }
+      .slide h2 {
+        font-size: 1.2em;
+      }
+      .slide p,
+      .slide ul {
+        font-size: 0.9em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -161,175 +169,173 @@
 
   <!-- Slide 1: Logo -->
   <div class="slide">
-	<div class="logo-container">
-	<img src="images/dropsensai_cropped.png" alt="DropSensAI Logo">
-	</div>
+    <div class="logo-container">
+      <img src="images/dropsensai_cropped.png" alt="DropSensAI Logo">
+    </div>
   </div>
 
-  <!-- SLIDE 2: Title -->
+  <!-- Slide 2: Title -->
   <div class="slide" id="slide-1">
-	<div class="slide-content">
-		<h1>DropSensAI</h1>
-		<h2>“Precision Retargeting. Instant&nbsp;Action.”</h2>
-		<hr class="quote-divider">
-		<p class="instructions">
-		  ▶️ Scroll or use ↑/↓ arrow keys to change&nbsp;slides.<br/>
-		  ▶️ Click “Show Speaker Notes” to view the voiceover&nbsp;script.
-		</p>
-		<hr class="quote-divider">
-		<button class="toggle-btn" onclick="toggleNotes(1)">Show Speaker Notes</button>
-		<div class="notes" id="notes-1">
-		  <p>Greetings. Today, we’re introducing something that could change the way marketing and sales teams think about price drops. This is… <strong>DropSensAI</strong>.</p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>DropSensAI</h1>
+      <h2>“Precision Retargeting. Instant Action.”</h2>
+      <hr class="quote-divider">
+      <p class="instructions">
+        ▶️ Scroll or use ↑/↓ arrow keys to change slides.<br/>
+        ▶️ Click “Show Speaker Notes” to view the voiceover script.
+      </p>
+      <hr class="quote-divider">
+      <button class="toggle-btn" onclick="toggleNotes(1)">Show Speaker Notes</button>
+      <div class="notes" id="notes-1">
+        <p>Greetings. Today, we’re introducing something that could change the way marketing and sales teams think about price drops. This is… <strong>DropSensAI</strong>.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SLIDE 3: The Problem -->
+  <!-- Slide 3: The Problem -->
   <div class="slide" id="slide-2">
-	<div class="slide-content">
-		<h1>The Problem</h1>
-		<h2>“Every day, customers browse products…<br />but leave without&nbsp;buying.”</h2>
-		<hr class="quote-divider">
-		<p>&#8226; Marketing teams waste hours sifting through&nbsp;spreadsheets.</p>
-		<p>&#8226; Identifying price drop opportunities is slow and&nbsp;manual.</p>
-		<p>&#8226; Potential revenue slips away&nbsp;unseen.</p>
-		<hr class="quote-divider">
-		<button class="toggle-btn" onclick="toggleNotes(2)">Show Speaker Notes</button>
-		<div class="notes" id="notes-2">
-		  <p>Here’s the challenge. Every day, customers browse products—but sometimes, prices quietly drop after those customers walk away. Companies lose opportunities because they don’t know who was interested… or how to reach out in&nbsp;time.</p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>The Problem</h1>
+      <h2>“Every day, customers browse products…<br />but leave without buying.”</h2>
+      <hr class="quote-divider">
+      <p>• Marketing teams waste hours sifting through spreadsheets.</p>
+      <p>• Identifying price drop opportunities is slow and manual.</p>
+      <p>• Potential revenue slips away unseen.</p>
+      <hr class="quote-divider">
+      <button class="toggle-btn" onclick="toggleNotes(2)">Show Speaker Notes</button>
+      <div class="notes" id="notes-2">
+        <p>Here’s the challenge. Every day, customers browse products—but sometimes, prices quietly drop after those customers walk away. Companies lose opportunities because they don’t know who was interested… or how to reach out in time.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SLIDE 4: The Opportunity -->
+  <!-- Slide 4: The Opportunity -->
   <div class="slide" id="slide-3">
-	<div class="slide-content">
-		<h1>The Opportunity</h1>
-		<h2>“A single price drop can bring a customer back.”</h2>
-		<hr class="quote-divider">
-		  <p>&#8226; Customers who saw a higher price before are primed to&nbsp;convert.</p>
-		  <p>&#8226; Instant detection → instant retargeting.</p>
-		  <p>&#8226; Revenue boost without extra marketing&nbsp;spend.</p>
-		<hr class="quote-divider">
-		<button class="toggle-btn" onclick="toggleNotes(3)">Show Speaker Notes</button>
-		<div class="notes" id="notes-3">
-		  <p>And the cost is real. Unused price drops mean lost revenue, wasted inventory, and marketing dollars that never deliver their full&nbsp;potential.</p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>The Opportunity</h1>
+      <h2>“A single price drop can bring a customer back.”</h2>
+      <hr class="quote-divider">
+      <p>• Customers who saw a higher price before are primed to convert.</p>
+      <p>• Instant detection → instant retargeting.</p>
+      <p>• Revenue boost without extra marketing spend.</p>
+      <hr class="quote-divider">
+      <button class="toggle-btn" onclick="toggleNotes(3)">Show Speaker Notes</button>
+      <div class="notes" id="notes-3">
+        <p>And the cost is real. Unused price drops mean lost revenue, wasted inventory, and marketing dollars that never deliver their full potential.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SLIDE 5: Introducing DropSensAI -->
+  <!-- Slide 5: Introducing DropSensAI -->
   <div class="slide" id="slide-4">
-	<div class="slide-content">
-		<h1>Introducing DropSensAI</h1>
-		<h2>“Meet DropSensAI.”</h2>
-		<hr class="quote-divider">
-		  <p>&#8226; Instantly compares viewed prices to current&nbsp;prices.</p>
-		  <p>&#8226; Detects drops by SKU and&nbsp;customer.</p>
-		  <p>&#8226; Filters by stock levels and&nbsp;thresholds.</p>
-		  <p>&#8226; Outputs a clean, ready-to-use target&nbsp;list.</p>
-		<hr class="quote-divider">
-		<button class="toggle-btn" onclick="toggleNotes(4)">Show Speaker Notes</button>
-		<div class="notes" id="notes-4">
-		  <p>DropSensAI changes that. It analyzes customer browsing data and live price drops, and instantly finds the customers who would be thrilled to know a product they viewed… is now&nbsp;cheaper.</p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>Introducing DropSensAI</h1>
+      <h2>“Meet DropSensAI.”</h2>
+      <hr class="quote-divider">
+      <p>• Instantly compares viewed prices to current prices.</p>
+      <p>• Detects drops by SKU and customer.</p>
+      <p>• Filters by stock levels and thresholds.</p>
+      <p>• Outputs a clean, ready-to-use target list.</p>
+      <hr class="quote-divider">
+      <button class="toggle-btn" onclick="toggleNotes(4)">Show Speaker Notes</button>
+      <div class="notes" id="notes-4">
+        <p>DropSensAI changes that. It analyzes customer browsing data and live price drops, and instantly finds the customers who would be thrilled to know a product they viewed… is now cheaper.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SLIDE 6: Demo Scenario -->
+  <!-- Slide 6: Demo Scenario -->
   <div class="slide" id="slide-5">
-	<div class="slide-content">
-		<h1>Demo Scenario</h1>
-		<h2>“Imagine you’re a sales rep…”</h2>
-		<hr class="quote-divider">
-		  <p>&#8226; You want to find customers who saw a higher&nbsp;price…</p>
-		  <p>&#8226; So you can send them a personal offer&nbsp;now.</p>
-		  <p>&#8226; DropSensAI finds them in&nbsp;seconds.</p>
-		<hr class="quote-divider">
-		<button class="toggle-btn" onclick="toggleNotes(5)">Show Speaker Notes</button>
-		<div class="notes" id="notes-5">
-		  <p>It’s simple. DropSensAI takes two data sources: Browsed products and prices. Current product prices and drops It automatically compares them, filters by stock levels, and pinpoints the customers who deserve to know about a&nbsp;discount.</p>
-		  </p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>Demo Scenario</h1>
+      <h2>“Imagine you’re a sales rep…”</h2>
+      <hr class="quote-divider">
+      <p>• You want to find customers who saw a higher price…</p>
+      <p>• So you can send them a personal offer now.</p>
+      <p>• DropSensAI finds them in seconds.</p>
+      <hr class="quote-divider">
+      <button class="toggle-btn" onclick="toggleNotes(5)">Show Speaker Notes</button>
+      <div class="notes" id="notes-5">
+        <p>It’s simple. DropSensAI takes two data sources: Browsed products and prices. Current product prices and drops. It automatically compares them, filters by stock levels, and pinpoints the customers who deserve to know about a discount.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SLIDE 7: Live Demo Highlights -->
+  <!-- Slide 7: Live Demo Highlights -->
   <div class="slide" id="slide-6">
-	<div class="slide-content">
-		<h1>Live Demo Highlights</h1>
-		<h2>“Show customers with the biggest price drops.”</h2>
-		<hr class="quote-divider">
-		  <p>&#8226; Customer email &#8226; SKU &#8226;  Old price vs new&nbsp;price &#8226;  % drop &#8226;  Stock&nbsp;levels &#8226;</p>
-		  <p><em>No SQL. No spreadsheets. Pure&nbsp;speed.</em></p>
-		<hr class="quote-divider">
-		<img 
-		  src="images/dropsensai_demo.gif"
-		  loading="lazy"
-		  style="max-width: 800px; width: 100%; height: auto; display: block; margin: 30px auto;" 
-		  alt="DropSensAI Demo Animation">
-		<button class="toggle-btn" onclick="toggleNotes(6)">Show Speaker Notes</button>
-		<div class="notes" id="notes-6">
-		  <p>Let’s see DropSensAI in action. Imagine a sales or service rep asking: “Show me customers with the biggest price drops.” DropSensAI instantly returns a table of customers, products, and savings. The rep can then choose to export that list… or craft personalized emails on the&nbsp;spot.</p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>Live Demo Highlights</h1>
+      <h2>“Show customers with the biggest price drops.”</h2>
+      <hr class="quote-divider">
+      <p>• Customer email • SKU • Old price vs new price • % drop • Stock levels •</p>
+      <p><em>No SQL. No spreadsheets. Pure speed.</em></p>
+      <hr class="quote-divider">
+      <img src="images/dropsensai_demo.gif" loading="lazy" style="max-width: 800px; width: 100%; height: auto; display: block; margin: 30px auto;" alt="DropSensAI Demo Animation">
+      <button class="toggle-btn" onclick="toggleNotes(6)">Show Speaker Notes</button>
+      <div class="notes" id="notes-6">
+        <p>Let’s see DropSensAI in action. Imagine a sales or service rep asking: “Show me customers with the biggest price drops.” DropSensAI instantly returns a table of customers, products, and savings. The rep can then choose to export that list… or craft personalized emails on the spot.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SLIDE 8: Productivity Gains -->
+  <!-- Slide 8: Productivity Gains -->
   <div class="slide" id="slide-7">
-	<div class="slide-content">
-		<h1>Productivity Gains</h1>
-		<h2>“Here’s the&nbsp;magic.”</h2>
-		<hr class="quote-divider">
-		  <p>&#8226; No more manual matching of prices vs&nbsp;views.</p>
-		  <p>&#8226; Retarget in minutes, not&nbsp;days.</p>
-		  <p>&#8226; Higher ROI with laser-focused&nbsp;campaigns.</p>
-		<hr class="quote-divider">
-		<button class="toggle-btn" onclick="toggleNotes(7)">Show Speaker Notes</button>
-		<div class="notes" id="notes-7">
-		  <p>Take this example. A customer viewed a product for £230. That product just dropped to £105. DropSensAI finds this opportunity—and now, the company can reach out, offer a coupon, or simply let the customer know: “The product you loved is now on sale.” That’s how we turn price drops into&nbsp;revenue.</p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>Productivity Gains</h1>
+      <h2>“Here’s the magic.”</h2>
+      <hr class="quote-divider">
+      <p>• No more manual matching of prices vs views.</p>
+      <p>• Retarget in minutes, not days.</p>
+      <p>• Higher ROI with laser-focused campaigns.</p>
+      <hr class="quote-divider">
+      <button class="toggle-btn" onclick="toggleNotes(7)">Show Speaker Notes</button>
+      <div class="notes" id="notes-7">
+        <p>Take this example. A customer viewed a product for £230. That product just dropped to £105. DropSensAI finds this opportunity—and now, the company can reach out, offer a coupon, or simply let the customer know: “The product you loved is now on sale.” That’s how we turn price drops into revenue.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SLIDE 9: Extend the Power -->
+  <!-- Slide 9: Extend the Power -->
   <div class="slide" id="slide-8">
-	<div class="slide-content">
-		<h1>Extend the Power</h1>
-		<h2>“This isn’t just&nbsp;analysis…”</h2>
-		<hr class="quote-divider">
-		  <p>&#8226; Push data directly to Eloqua, Responsys, or any external&nbsp;tool.</p>
-		  <p>&#8226; Trigger email campaigns automatically.</p>
-		  <p>&#8226; Or personalize 1:1 outreach in Eloqua&nbsp;Engage.</p>
-		<hr class="quote-divider">
-		<button class="toggle-btn" onclick="toggleNotes(8)">Show Speaker Notes</button>
-		<div class="notes" id="notes-8">
-		  <p>The result? Marketing teams stay proactive. Sales reps get hot leads. And customers feel valued, because the brand remembered what they wanted—and saved them&nbsp;money.</p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>Extend the Power</h1>
+      <h2>“This isn’t just analysis…”</h2>
+      <hr class="quote-divider">
+      <p>• Push data directly to Eloqua, Responsys, or any external tool.</p>
+      <p>• Trigger email campaigns automatically.</p>
+      <p>• Or personalize 1:1 outreach in Eloqua Engage.</p>
+      <hr class="quote-divider">
+      <button class="toggle-btn" onclick="toggleNotes(8)">Show Speaker Notes</button>
+      <div class="notes" id="notes-8">
+        <p>The result? Marketing teams stay proactive. Sales reps get hot leads. And customers feel valued, because the brand remembered what they wanted—and saved them money.</p>
+      </div>
+    </div>
   </div>
 
-  <!-- SLIDE 10: Thank You -->
+  <!-- Slide 10: Thank You -->
   <div class="slide" id="slide-9">
-	<div class="slide-content">
-		<h1>Thank You</h1>
-		<h2>“DropSensAI makes&nbsp;price&nbsp;drop retargeting… <br/>effortless.”</h2>
-		<hr class="quote-divider">
-		<button class="toggle-btn" onclick="toggleNotes(9)">Show Speaker Notes</button>
-		<div class="notes" id="notes-9">
-		  <p>And this is only the beginning. DropSensAI can connect to marketing platforms like Eloqua, automating campaigns directly from price-drop data. We’re excited for what comes next. Thank you for joining us. This… is <strong>DropSensAI.</strong></p>
-		</div>
-	</div>
+    <div class="slide-content">
+      <h1>Thank You</h1>
+      <h2>“DropSensAI makes price drop retargeting… effortless.”</h2>
+      <hr class="quote-divider">
+      <button class="toggle-btn" onclick="toggleNotes(9)">Show Speaker Notes</button>
+      <div class="notes" id="notes-9">
+        <p>And this is only the beginning. DropSensAI can connect to marketing platforms like Eloqua, automating campaigns directly from price-drop data. We’re excited for what comes next. Thank you for joining us. This… is <strong>DropSensAI.</strong></p>
+      </div>
+    </div>
   </div>
 
   <!-- Closing Logo -->
   <div class="slide">
-	<div class="logo-container">
-		<img src="images/dropsensai_cropped.png" alt="DropSensAI Logo">
-	</div>
+    <div class="logo-container">
+      <img src="images/dropsensai_cropped.png" alt="DropSensAI Logo">
+    </div>
   </div>
 
 </div>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top" onclick="scrollToTop()">&#8679;</div>
 
 <script>
   function toggleNotes(slideId) {
@@ -356,6 +362,23 @@
       container.scrollBy({ top: -slideHeight, behavior: "smooth" });
     }
   });
+
+  function scrollToTop() {
+    document.querySelector('.slides-container').scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    const scrollBtn = document.querySelector('.scroll-top');
+    if (window.scrollY > 200) {
+      scrollBtn.style.display = 'block';
+    } else {
+      scrollBtn.style.display = 'none';
+    }
+  });
 </script>
+
 </body>
 </html>
