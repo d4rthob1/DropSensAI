@@ -73,6 +73,12 @@
       display: block;
       margin: 0 auto;
     }
+    .instructions {
+      font-size: 1.2em;
+      color: #666;
+      margin-top: 30px;
+      text-align: center;
+    }
     .notes {
       display: none;
       background: #f2f2f2;
@@ -94,12 +100,6 @@
       border: none;
       border-radius: 5px;
       font-size: 1em;
-    }
-    .instructions {
-      font-size: 1em;
-      color: #666;
-      margin-top: 10px;
-      text-align: center;
     }
     hr.quote-divider {
       border: none;
@@ -145,24 +145,16 @@
 <body>
 <div class="slides-container">
 
-  <!-- Slide 1: Logo -->
-  <div class="slide">
-    <div class="logo-container">
-      <img src="images/dropsensai_cropped.png" alt="DropSensAI Logo">
-    </div>
-  </div>
-
-  <!-- SLIDE 2: Title -->
+  <!-- SLIDE 1: Logo + Instructions -->
   <div class="slide" id="slide-1">
     <div class="slide-content">
-      <h1>DropSensAI</h1>
-      <h2>“Precision Retargeting. Instant&nbsp;Action.”</h2>
-      <hr class="quote-divider">
+      <div class="logo-container">
+        <img src="images/dropsensai_cropped.png" alt="DropSensAI Logo">
+      </div>
       <p class="instructions">
-        ▶️ Scroll or use ↑/↓ arrow keys to change&nbsp;slides.<br/>
-        ▶️ Click “Show Speaker Notes” to view the voiceover&nbsp;script.
+        ▶️ Scroll or use ↑/↓ arrow keys to change slides.<br/>
+        ▶️ Click “Show Speaker Notes” to view the voiceover script.
       </p>
-      <hr class="quote-divider">
       <button class="toggle-btn" onclick="toggleNotes(1)">Show Speaker Notes</button>
       <div class="notes" id="notes-1">
         <p>Greetings. Today, we’re introducing something that could change the way marketing and sales teams think about price drops. This is… <strong>DropSensAI</strong>.</p>
@@ -170,7 +162,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 3: The Problem -->
+  <!-- SLIDE 2: The Problem -->
   <div class="slide" id="slide-2">
     <div class="slide-content">
       <h1>The Problem</h1>
@@ -187,7 +179,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 4: The Opportunity -->
+  <!-- SLIDE 3: The Opportunity -->
   <div class="slide" id="slide-3">
     <div class="slide-content">
       <h1>The Opportunity</h1>
@@ -204,7 +196,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 5: Introducing DropSensAI -->
+  <!-- SLIDE 4: Introducing DropSensAI -->
   <div class="slide" id="slide-4">
     <div class="slide-content">
       <h1>Introducing DropSensAI</h1>
@@ -222,7 +214,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 6: Demo Scenario -->
+  <!-- SLIDE 5: Demo Scenario -->
   <div class="slide" id="slide-5">
     <div class="slide-content">
       <h1>Demo Scenario</h1>
@@ -239,7 +231,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 7: Live Demo Highlights -->
+  <!-- SLIDE 6: Live Demo Highlights -->
   <div class="slide" id="slide-6">
     <div class="slide-content">
       <h1>Live Demo Highlights</h1>
@@ -256,7 +248,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 8: Productivity Gains -->
+  <!-- SLIDE 7: Productivity Gains -->
   <div class="slide" id="slide-7">
     <div class="slide-content">
       <h1>Productivity Gains</h1>
@@ -273,7 +265,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 9: Extend the Power -->
+  <!-- SLIDE 8: Extend the Power -->
   <div class="slide" id="slide-8">
     <div class="slide-content">
       <h1>Extend the Power</h1>
@@ -290,7 +282,7 @@
     </div>
   </div>
 
-  <!-- SLIDE 10: Thank You -->
+  <!-- SLIDE 9: Thank You -->
   <div class="slide" id="slide-9">
     <div class="slide-content">
       <h1>Thank You</h1>
@@ -337,7 +329,6 @@
       container.scrollBy({ top: -slideHeight, behavior: "smooth" });
     }
   });
-
 </script>
 </body>
 </html>
